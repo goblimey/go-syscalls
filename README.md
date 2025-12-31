@@ -1,4 +1,4 @@
-# syscall
+# portablesyscall
 An example operating system independent system call interface for Go
 
 This package aims to solve a single problem. 

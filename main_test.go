@@ -1,4 +1,4 @@
-package sys
+package portablesyscall
 
 import (
 	"syscall"

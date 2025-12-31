@@ -12,7 +12,7 @@
 // under Windows as long as it uses the OSName constant to avoid calling the syscall
 // functions (which would break if called in that environment).  This allows system
 // testing under Windows of other parts of the solution that don't use this package.
-package sys
+package portablesyscall
 
 import (
 	"syscall"
@@ -23,13 +23,13 @@ import (
 const OSName = "windows"
 
 // Getuid gets the current user ID.  The Windows version always returns -1
-// and the error "not implemented".
+// and the a syscall.EWINDOWS error.
 func Getuid() (int, error) {
 	return -1, syscall.EWINDOWS
 }
 
 // Setuid switches the effective user to the user with the given user ID.  The
-// Windows version always returns a "not impleented" error.
+// Windows version always returns a syscall.EWINDOWS error.
 func Setuid(targetID int) error {
 	return syscall.EWINDOWS
 }

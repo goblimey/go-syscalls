@@ -1,7 +1,7 @@
 //go:build linux
 // +build linux
 
-// The syscall package provides a common set of interfaces to system calls on
+// The portablesyscall package provides a common set of interfaces to system calls on
 // Windows and Linux.  All versions offer a set of functions with the same signatures.
 // The constant OSName contains the string "windows" or "linux", the same name as the
 // build tag for the target system.  The Windows version of the functions all return
@@ -14,7 +14,7 @@
 // A process can only use the features of this package if it's running as root on
 // a Linux system because the underlying functionality only exists on that system and
 // only root can use it.
-package sys
+package portablesyscall
 
 import (
 	"golang.org/x/sys/unix"
